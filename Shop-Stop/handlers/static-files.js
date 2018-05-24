@@ -6,12 +6,11 @@ module.exports = (req, res) => {
             if (err) {
                 console.log(err);
             }
-
-            if (req.pathname.endsWith('.css')) {
+            if ('.' + req.pathname.endsWith('.css')) {
                 res.writeHead(200, {
                     'content-type': 'text/css'
                 });
-            } else if (req.pathname.endsWith('.ico')) {
+            } else if ('.' + req.pathname.endsWith('.ico')) {
                 res.writeHead(200, {
                     'content-type': 'image/x-icon'
                 });
