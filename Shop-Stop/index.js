@@ -2,7 +2,7 @@ const http = require('http');
 const url = require('url');
 const handlers = require('./handlers');
 const database = require('./config/database');
-const port = 8000;
+const port = 5000;
 
 http.createServer((req, res) => {
     req.pathname = url.parse(req.url).pathname;

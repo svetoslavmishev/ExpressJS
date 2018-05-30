@@ -15,7 +15,8 @@ module.exports = (req, res) => {
             let queryData = querystring.parse(url.parse(req.url).query).query;
 
             if (queryData) {
-                products = products.filter(product => product.name.toLowerCase().includes(queryData));
+                products = products
+                    .filter(product => product.name.toLowerCase().includes(queryData));
             }
 
             let replacer = '';
