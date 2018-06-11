@@ -3,7 +3,7 @@ const shortid = require('shortid');
 const multiparty = require('multiparty');
 const path = './views/products/add.html';
 const querystring = require('querystring');
-const database = require('./../config/database');
+const Product = require('../model/Product');
 
 module.exports = (req, res) => {
     if (req.method === 'GET' && req.pathname === '/product/add') {
@@ -58,13 +58,17 @@ module.exports = (req, res) => {
         });
 
         form.on('close', () => {
-            database.products.add(product);
+            //database.products.add(product);
 
-            res.writeHead(302, {
-                Location: '/'
-            });
+            Product
+                .create(product)
+                .then(() => {
+                    res.writeHead(302, {
+                        Location: '/'
+                    });
 
-            res.end();
+                    res.end();
+                });
         });
 
         form.parse(req);
