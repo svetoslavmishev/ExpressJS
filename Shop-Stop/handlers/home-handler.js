@@ -30,12 +30,12 @@ module.exports = (req, res) => {
                             </div>`;
                     }
 
-                    data = data.toString().replace('{replace me}', replacer);
+                    let html = data.toString().replace('{replace me}', replacer);
                     res.writeHead(200, {
                         'Content-Type': 'text/html'
                     });
 
-                    res.write(data);
+                    res.write(html);
                     res.end();
                 });
         });
