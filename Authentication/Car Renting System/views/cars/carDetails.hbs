@@ -1,0 +1,22 @@
+<h2>Rent Car Details</h2>
+
+<form action="/cars/rent/{{car._id}}" method="post">
+    <div class="cars">
+        <p>Brand
+            <b>{{car.brand}}</b>
+        </p>
+        <p>Model
+            <b>{{car.model}}</b>
+        </p>
+        <p>Year
+            <b>{{car.year}}</b>
+        </p>
+        <br>
+        <img src="{{car.carUrl}}" alt="carImage" style="border-radius: 10px;" />
+        <br>
+        <p>Price for rent per day: &euro; {{car.pricePerDay}}</p>
+        <br>
+        <input type="text" name="days" placeholder="Days for rent">
+        <input type="submit" value="Rent">
+    </div>
+</form>

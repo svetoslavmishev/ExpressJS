@@ -1,0 +1,27 @@
+<h2>Available Cars</h2>
+{{#each cars}}
+<div class="cars">
+    <p>Brand
+        <b>{{brand}}</b>
+    </p>
+    <p>Model
+        <b>{{model}}</b>
+    </p>
+    <p>Year
+        <b>{{year}}</b>
+    </p>
+    <br>
+    <img src="{{carUrl}}" alt="carImage" style="border-radius: 10px;" />
+    <br>
+    <p>Price for rent per day: &euro; {{pricePerDay}}</p>
+    <br>
+    <button onclick='location.href="/cars/rent/{{_id}}"' class="button">Rent Details</button>
+    <br>
+    <button onclick='location.href="/cars/edit/{{_id}}"' class="button">Edit car</button>
+</div>
+{{else}}
+<h2>There is no available cars for rent</h2>
+{{/each}}
+
+<a class="scroll" href="all?page={{pages.previous}}" class="previous">&laquo; Previous</a>
+<a class="scroll" href="all?page={{pages.next}}" class="next">Next &raquo;</a>

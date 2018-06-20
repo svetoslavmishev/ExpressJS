@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0
+}
+
+header {
+    margin-bottom: 2em;
+}
+
+.container {
+    padding-left: 25%
+}
+
+.menu {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.menu li {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 20px;
+    text-align: center;
+    line-height: 10px;
+    margin-left: 15px;
+}
+
+.menu li:after {
+    content: "\00a0";
+}
+
+.error {
+    color: red;
+}
+
+.image-background {
+    width: 50%;
+    height: 40%;
+}
+
+.cars {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 20px;
+    text-align: left;
+    line-height: 20px;
+    margin-left: 50px;
+}
+
+h2{
+    padding: 5px 200px;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: white; 
+    color: black; 
+    border: 1px solid #4CAF50;
+    border-radius: 3px;
+}
+
+a:hover {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;    
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.button {
+    background-color: white; 
+    color: black; 
+    border: 1px solid #4CAF50;
+    font-size: 16px;
+    padding: 5px 32px;
+    margin: 4px 2px;
+    border-radius: 3px;
+}
+
+.button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.shadow{
+    text-shadow: 1px 1px 5px grey;
+}
+
+table {
+    width: 40%;
+}
+thead {
+   font-weight: bold;
+}
+td {
+    border: 1px solid transparent;
+    background-color: #dddddd;
+}
