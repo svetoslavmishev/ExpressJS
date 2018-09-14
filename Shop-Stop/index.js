@@ -1,23 +1,16 @@
-const http = require('http');
-const url = require('url');
-const handlers = require('./handlers');
 const port = 5000;
-
-let env = process.env.NODE_ENV || 'developement';
 const config = require('./config/config');
 const database = require('./config/database.config');
+const express = require('express');
 
-database(config[env]);
+let app = express();
+let environment = process.env.NODE_environment || 'development';
 
-http.createServer((req, res) => {
-    req.pathname = url.parse(req.url).pathname;
+database(config[environment]);
+require('./config/express')(app, config[environment]);
+require('./config/routes')(app);
+require('./config/passport')();
 
-    for (const handler of handlers) {
-        if (!handler(req, res)) {
-            break;
-        }
-        handler(req, res);
-    }
-}).listen(port, () => {
-    console.log(`Server running on port ${port} ...`);
+app.listen(port, ()=>{
+    console.log(`Server is up and running on port ${port}...`);
 });

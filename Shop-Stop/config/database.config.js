@@ -2,22 +2,19 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 module.exports = (config) => {
-    mongoose.connect(config.connectionStr);
+    mongoose.connect(config.connectionString);
 
-    let db = mongoose.connection;
+    let database = mongoose.connection;
 
-    db.once('open', err => {
-        if (err) {
+    require('../models/Product');
+    require('../models/Category');
+    require('../models/User').seedAdminUser();
+
+    database.once('open', (err) => {
+        if(err) {
             console.log(err);
             return;
         }
-
-        console.log('Database up and running ...');
+        console.log('Database is ready!');
     });
-
-    db.on('err', err => {
-        console.log(err);
-    });
-
-    require('../model/Product');
 };
